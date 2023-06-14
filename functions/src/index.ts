@@ -13,6 +13,7 @@ export const createUserDocument = functions.auth
   });
 
 export const deletePostComments = functions.firestore
+  // eslint-disable-next-line quotes
   .document(`posts/{postId}`)
   .onDelete(async (snap) => {
     const postId = snap.id;
@@ -30,6 +31,7 @@ export const deletePostComments = functions.firestore
           }
         });
       })
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       .catch((error) => {
         console.log("Error deleting post comments");
       });
